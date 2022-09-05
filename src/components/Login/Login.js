@@ -22,12 +22,14 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
+          <form onSubmit={handleSubmit}>
             <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} />
             <input type="text" id="password" onChange={(e) => setPassword(e.target.value)} />
             <button type="submit">Submit</button>
             <Link to ="/users/password">MDP</Link>
-        </form>
+          </form>
+        </div>
     );
 }
 

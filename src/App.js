@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
-import Navigation from "./components/Navigation/Navigation";
 import Signup from "./components/Signup/Signup";
 import Home from "./pages/Home";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
@@ -11,9 +10,8 @@ import Navbar from "./components/Navbar/Navbar";
 const App = () => {
   return (
     <BrowserRouter>
-    <div class="w-full h-screen">
+    <div className="w-full h-full bg-red-200">
     <Navbar />
-      {/* <Navigation /> */}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
