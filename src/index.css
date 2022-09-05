@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --main: #764AF1;
+  --second:#9772FB;
+  --third:#F2F2F2;
+  --fourth:#F32424;
+}
+
 @layer base {
   body {
     font-family: 'Readex Pro', sans-serif;
@@ -26,6 +33,11 @@
     @apply
       font-semibold text-2xl
       overflow-ellipsis overflow-hidden whitespace-nowrap
+  }
+
+  .product-description {
+    @apply
+      overflow-clip overflow-hidden whitespace-nowrap
   }
 
   .discount-percent {
