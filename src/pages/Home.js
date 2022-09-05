@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
     <Hero/>
-    <div className="card-container h-screen bg-red-200 flex items-center justify-center gap-10">
+    <div className="card-container h-screen flex items-center justify-center gap-10">
     { data && data.map((property) => (
       
       <Article 

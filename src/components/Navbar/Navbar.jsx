@@ -47,9 +47,7 @@ export default function Example() {
               S'inscrire
              </NavLink>
           </>
-
-          )}
-       
+          )}   
         </div>
       </div>
     </Popover>
