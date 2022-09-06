@@ -48,7 +48,8 @@ const Article = () => {
       </div>
 
       {/* <h1>{data.title}</h1>
-            <p>{data.description}</p> */}
+      <p>{data.description}</p>
+      <p>{data.user.email}</p> */}
     </div>
   );
 };
