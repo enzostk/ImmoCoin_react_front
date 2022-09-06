@@ -27,17 +27,19 @@ const Article = () => {
         alt=""
       />
       <div className="details-text">
-      <div className="flex items-center gap-2 mt-3 mb-3">
+     <div className="flex items-center justify-between">
+        <h1>Property Numéro 1</h1>
+      <div className="flex gap-2 mt-3 mb-3">
             <span className="badge">1000m²</span>
             <span className="badge">
               30€/m²
             </span>
           </div>
-        <h1>Property Numéro 1</h1>
+    </div>
         <div>
           <span className="text-xl font-bold">580 000€</span>
         </div>
-        <p>
+        <p className="mb-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
           voluptas necessitatibus recusandae sapiente expedita, sed voluptatibus
           quod, corrupti explicabo aperiam voluptate ipsum. Dolorem, accusamus
