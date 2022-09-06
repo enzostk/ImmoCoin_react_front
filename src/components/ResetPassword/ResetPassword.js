@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 
 const ResetPassword = () => {
   const token = useParams().token;
-  console.log(token);
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = e.target.password.value;
     const data2 = e.target.password_confirmation.value;
-    console.log(data);
+
 
     fetch("http://localhost:3000/users/password",{
         method: "PATCH",
