@@ -14,7 +14,6 @@ const Home = () => {
       .catch((error) => console.error(error));
   },[]);
 
-
   return (
     <div>
     <Hero/>

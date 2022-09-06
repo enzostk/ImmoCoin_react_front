@@ -16,12 +16,13 @@ const Hero = () => {
             </div>
             <div className="pt-4">
               <span className="text-third">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, est.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cum omnis temporibus voluptatem impedit iusto sed nisi eum, laboriosam dignissimos ratione dolor ex aliquam alias nihil assumenda ea minus consequatur corrupti libero, optio facilis ipsum dolore quaerat! Aliquam suscipit corporis, aspernatur perspiciatis itaque porro necessitatibus dolor, fuga architecto, a similique?
               </span>
             </div>
           </div>
-          <div className='basis-1/2 px-0 py-0'>
-            <img src={herologo} alt="herologo" width="500" height="600"/>
+          <div className='basis-1/3 px-0 py-0'>
+            <img src="" alt="herologo" width="" height=""/>
+ 
           </div>
         </div>
       </div>

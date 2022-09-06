@@ -9,7 +9,7 @@ module.exports = {
         purple:"#764AF1",
         second:"#9772FB",
         third:"#F2F2F2",
-        fourth:"#F32424"
+        red:"#F32424"
       }
     },
   },
