@@ -1,11 +1,11 @@
 import React from 'react'
-import herologo from "../../assets/images/hero-logo.jpg"
+import herologo from "../../assets/images/pngegg.png"
 const Hero = () => {
   return (
     <div className="bg-purple">
-      <div className="px-32 py-32">
+      <div className="px-32">
         <div className="flex flex-row space-x-12">
-          <div className="basis-1/2">
+          <div className="basis-3/4 py-32">
             <span className="text-5xl font-bold text-third">
               Bienvenue chez ImmoCoin
             </span>
@@ -20,9 +20,8 @@ const Hero = () => {
               </span>
             </div>
           </div>
-          <div className='basis-1/3 px-0 py-0'>
-            <img src="" alt="herologo" width="" height=""/>
- 
+          <div className='basis-1/4 px-0 py-0'>
+            <img src={herologo} alt="herologo" width="" height=""/>
           </div>
         </div>
       </div>
