@@ -5,7 +5,7 @@ import image from "../../assets/images/headphone.png";
 const Article = (property) => {
   return (
     <div className="card">
-      <img className="w-full h-full object-cover" src={image} alt="headphone"/>
+      <img className="w-full h-full object-cover" src={"https://www.cactusnumerique.com/wp-content/uploads/elementor/thumbs/webaliser-_TPTXZd9mOo-unsplash-min-ovxvd1b3srjeno67z4zms7tarxzzih276y2vvdj8zw.jpg"} alt="headphone"/>
 
       <div className="p-5 flex flex-col gap-3">
 
