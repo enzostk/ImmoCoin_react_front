@@ -17,7 +17,7 @@ const Article = () => {
   }, []);
 
   const showEmail = () => {
-    setButtonText("propertyEmail@email.com")
+    setButtonText("property@email.com")
   }
 
   return (
@@ -26,7 +26,7 @@ const Article = () => {
         src="https://www.cactusnumerique.com/wp-content/uploads/elementor/thumbs/webaliser-_TPTXZd9mOo-unsplash-min-ovxvd1b3srjeno67z4zms7tarxzzih276y2vvdj8zw.jpg"
         alt=""
       />
-      <div className="details-text">
+      <div className="details-text pl-4 pr-4">
      <div className="flex items-center justify-between">
         <h1>Property Numéro 1</h1>
       <div className="flex gap-2 mt-3 mb-3">
@@ -46,7 +46,7 @@ const Article = () => {
           eaque. Mollitia voluptate doloribus odit laboriosam.
         </p>
 
-        <button className="button-primary" onClick={showEmail}>{buttonText}</button>
+         <button className="button-primary mb-4" onClick={showEmail}>{buttonText}</button>
       </div>
 
       {/* <h1>{data.title}</h1>
