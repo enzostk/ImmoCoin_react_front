@@ -24,8 +24,9 @@ const Home = () => {
         title={property.title}
         price={property.price}
         description={property.description}
-        email={property.user.email}
+        // email={property.user.email}
         surface={property.surface}
+        id={property.id}
         />
         ))}
 

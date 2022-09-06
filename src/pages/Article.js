@@ -17,8 +17,8 @@ const Article = () => {
   }, []);
 
   const showEmail = () => {
-    setButtonText("property@email.com")
-  }
+    setButtonText("property@email.com");
+  };
 
   return (
     <div className="details-container">
@@ -27,15 +27,13 @@ const Article = () => {
         alt=""
       />
       <div className="details-text pl-4 pr-4">
-     <div className="flex items-center justify-between">
-        <h1>Property Numéro 1</h1>
-      <div className="flex gap-2 mt-3 mb-3">
+        <div className="flex items-center justify-between">
+          <h1>Title of property</h1>
+          <div className="flex gap-2 mt-3 mb-3">
             <span className="badge">1000m²</span>
-            <span className="badge">
-              30€/m²
-            </span>
+            <span className="badge">30€/m²</span>
           </div>
-    </div>
+        </div>
         <div>
           <span className="text-xl font-bold">580 000€</span>
         </div>
@@ -46,12 +44,13 @@ const Article = () => {
           eaque. Mollitia voluptate doloribus odit laboriosam.
         </p>
 
-         <button className="button-primary mb-4" onClick={showEmail}>{buttonText}</button>
+        <button className="button-primary mb-4" onClick={showEmail}>
+          {buttonText}
+        </button>
       </div>
 
       {/* <h1>{data.title}</h1>
-      <p>{data.description}</p>
-      <p>{data.user.email}</p> */}
+      <p>{data.description}</p> */}
     </div>
   );
 };

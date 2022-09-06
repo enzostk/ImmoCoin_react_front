@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import image from "../../assets/images/headphone.png";
 
 const Article = (property) => {
@@ -32,8 +33,10 @@ const Article = (property) => {
 
         {/* Product action button */}
         <div className="mt-5 flex gap-2">
-          <button className="button-primary">Show More</button>
-        </div>
+            <Link to={"article/" + property.id}>
+              <button className="button-primary">{property.id}</button>
+            </Link>
+          </div>
       </div>
       </div>
   );
