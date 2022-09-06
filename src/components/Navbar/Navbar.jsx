@@ -42,39 +42,24 @@ export default function Example() {
           </NavLink>
           {logged ? (
             <>
-              <NavLink
-                className="hidden items-center justify-end md:flex md:flex-1 lg:w-0"
-                to="/profile"
-              >
-                <p className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-                  Mon profil
-                </p>
-              </NavLink>
-              <button
-                onClick={logout}
-                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-              >
-                Déconnexion
-              </button>
+            <NavLink className="hidden items-center justify-end md:flex md:flex-1 lg:w-0" to="/profile">
+              <p className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Mon profil</p>
+            </NavLink>
+            <button onClick={logout} className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-red px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+              Déconnexion
+             </button>
             </>
           ) : (
             <>
-              <NavLink
-                className="hidden items-center justify-end md:flex md:flex-1 lg:w-0"
-                to="/login"
-              >
-                <p className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-                  Connexion
-                </p>
-              </NavLink>
-              <NavLink
-                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                to="/signup"
-              >
-                S'inscrire
-              </NavLink>
-            </>
-          )}
+            <NavLink className="hidden items-center justify-end md:flex md:flex-1 lg:w-0" to="/login">
+              <p className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Connexion</p>
+            </NavLink>
+            <NavLink className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-purple px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+              to="/signup">
+              S'inscrire
+             </NavLink>
+          </>
+          )}   
         </div>
       </div>
     </Popover>

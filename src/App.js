@@ -10,11 +10,12 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 
 import Navbar from "./components/Navbar/Navbar";
+import Article from "./pages/Article";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="w-full h-full bg-red-200">
+      <div className="bg-third w-full h-full ">
         <Navbar />
         <main>
           <Routes>
@@ -25,6 +26,7 @@ const App = () => {
 
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/article/:id" element={<Article />} />
           </Routes>
         </main>
       </div>

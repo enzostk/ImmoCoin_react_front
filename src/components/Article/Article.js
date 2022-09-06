@@ -1,9 +1,9 @@
-import React from 'react'
-import image from "../../assets/images/headphone.png"
+import React from "react";
+import { Link } from "react-router-dom";
+import image from "../../assets/images/headphone.png";
 
 const Article = (property) => {
   return (
-  <>
     <div className="card">
       <img className="w-full h-full object-cover" src={image} alt="headphone"/>
 
@@ -12,7 +12,7 @@ const Article = (property) => {
         {/* Product Badge */}
         <div className="flex items-center gap-2">
           <span className="badge">{property.surface}m²</span>
-          <span className="badge">{property.price/property.surface}€/m²</span>
+          <span className="badge">{Math.round(property.price/property.surface)}€/m²</span>
         </div>
 
         {/* Product Title */}
@@ -33,12 +33,13 @@ const Article = (property) => {
 
         {/* Product action button */}
         <div className="mt-5 flex gap-2">
-          <button className="button-primary">Show More</button>
-        </div>
+            <Link to={"article/" + property.id}>
+              <button className="button-primary">{property.id}</button>
+            </Link>
+          </div>
       </div>
-    </div>   
-  </>
-  )
-}
+      </div>
+  );
+};
 
-export default Article
+export default Article;
