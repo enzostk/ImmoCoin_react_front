@@ -1,3 +1,3 @@
 import { atomWithStorage } from 'jotai/utils';
 
-export const currentUserAtom = atomWithStorage('userData', null);
+export const currentUserAtom = atomWithStorage(['userData', null]);
