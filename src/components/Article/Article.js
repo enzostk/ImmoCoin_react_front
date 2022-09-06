@@ -12,7 +12,7 @@ const Article = (property) => {
         {/* Product Badge */}
         <div className="flex items-center gap-2">
           <span className="badge">{property.surface}m²</span>
-          <span className="badge">{property.price/property.surface}€/m²</span>
+          <span className="badge">{Math.round(property.price/property.surface)}€/m²</span>
         </div>
 
         {/* Product Title */}

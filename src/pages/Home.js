@@ -14,28 +14,22 @@ const Home = () => {
       .catch((error) => console.error(error));
   },[]);
 
-
   return (
     <div>
-    <Hero/>
-    <div className="card-container h-screen bg-red-200 flex items-center justify-center gap-10">
-    { data && data.map((property) => (
-      
-      <Article 
-      title={property.title}
-      price={property.price}
-      description={property.description}
-      id={property.id}
-      surface={property.surface}
-      />
-      // <>
-      // <h5>Titre:{property.title}</h5>
-      // <p>Prix:{property.price}</p>
-      // <p>Descritpion:{property.description}</p>
-      // <p>Numéro:{property.id}</p>
-      // </>
-    ))}
-    </div>
+      <Hero/>
+      <div className="card-container h-screen flex items-center justify-center gap-10">
+
+      { data && data.map((property) => (
+        <Article 
+        title={property.title}
+        price={property.price}
+        description={property.description}
+        email={property.user.email}
+        surface={property.surface}
+        />
+        ))}
+
+      </div>
     </div>
   )
 };

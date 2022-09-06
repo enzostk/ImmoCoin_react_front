@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 const App = () => {
   return (
     <BrowserRouter>
-    <div className="w-full h-full bg-red-200">
+    <div className="bg-third w-full h-full ">
     <Navbar />
       <main>
         <Routes>
