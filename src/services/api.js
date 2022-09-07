@@ -1,17 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-// const API = axios.create({ baseURL: "http://localhost:3000" });
-// const API2 = axios.create({ baseURL: "http://localhost:3000" });
-
-// API2.interceptors.request.use(({ headers, ...config }) => ({
-//   ...config,
-//   headers: {
-//     ...headers,
-//     "Content-Type": "application/json"
-//   },
-// }));
-
 const apiUrl = "http://localhost:3000";
 const API = axios.create({ baseURL: apiUrl });
 const API2 = axios.create({ baseURL: apiUrl });

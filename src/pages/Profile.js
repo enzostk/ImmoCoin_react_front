@@ -4,33 +4,29 @@ import { useAtom } from "jotai";
 import { currentUserAtom } from "../services/Atoms/currentUser";
 
 const Profile = () => {
-  const [currentUser, setcurrentUser] = useAtom(currentUserAtom);
-
-  // console.log("kikoo", currentUser.id);
-
-  const [properties, setData] = useState();
-
-  const [michelLaVariable, setmichelLaVariable] = useState();
+  const [currentUser, ] = useAtom(currentUserAtom);
+  const [, setData] = useState();
+  const [userProperties, setUserProperties] = useState();
 
   useEffect(() => {
     fetch("http://localhost:3000/properties")
       .then((res) => res.json())
       .then((properties) => {
         setData(properties);
-        setmichelLaVariable(
+        setUserProperties(
           properties.filter((property) => property.user.id === currentUser.id)
         );
       })
       .catch((error) => console.error(error));
   }, []);
 
+  if (userProperties === "")
+    return <h1>Vous n'avez pas encore ajouté de nouveaux biens.</h1>;
+
   return (
     <div>
-      {michelLaVariable == "" ? (
-        <div> va bosser </div>
-      ) : (
-        michelLaVariable &&
-        michelLaVariable.map((property) => {
+      {userProperties &&
+        userProperties.map((property) => {
           return (
             <div>
               price= {property.price}
@@ -41,23 +37,7 @@ const Profile = () => {
               <br />
             </div>
           );
-        })
-      )}
-
-      {/* {properties &&
-        properties.map((property) => {
-          if (currentUser.id === property.user.id)
-            return (
-              <div>
-                price= {property.price}
-                description={property.description}
-                id={property.id}
-                surface={property.surface}
-                email={property.user.email}
-                <br />
-              </div>
-            );
-        })} */}
+        })}
     </div>
   );
 };
