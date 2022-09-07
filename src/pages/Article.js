@@ -22,7 +22,7 @@ const Article = () => {
 
   if (data === undefined) return <h1>LOADING ...</h1>;
   return (
-    <div className="details-container">
+    <div className="details-container flex flex-row space-x-12">
       <img
         src="https://www.cactusnumerique.com/wp-content/uploads/elementor/thumbs/webaliser-_TPTXZd9mOo-unsplash-min-ovxvd1b3srjeno67z4zms7tarxzzih276y2vvdj8zw.jpg"
         alt=""
