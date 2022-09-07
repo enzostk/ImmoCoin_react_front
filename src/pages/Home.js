@@ -27,6 +27,7 @@ const Home = () => {
         // email={property.user.email}
         surface={property.surface}
         id={property.id}
+        key={property.id}
         />
         ))}
 
