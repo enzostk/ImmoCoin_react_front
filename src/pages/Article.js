@@ -21,7 +21,7 @@ const Article = () => {
   };
 
   return (
-    <div className="details-container">
+    <div className="details-container flex flex-row space-x-12">
       <img
         src="https://www.cactusnumerique.com/wp-content/uploads/elementor/thumbs/webaliser-_TPTXZd9mOo-unsplash-min-ovxvd1b3srjeno67z4zms7tarxzzih276y2vvdj8zw.jpg"
         alt=""
@@ -48,9 +48,6 @@ const Article = () => {
           {buttonText}
         </button>
       </div>
-
-      {/* <h1>{data.title}</h1>
-      <p>{data.description}</p> */}
     </div>
   );
 };

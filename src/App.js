@@ -15,7 +15,7 @@ import Article from "./pages/Article";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="bg-third w-full h-full ">
+      <div className="bg-third min-h-screen">
         <Navbar />
         <main>
           <Routes>

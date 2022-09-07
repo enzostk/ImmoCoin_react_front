@@ -5,10 +5,6 @@ import { currentUserAtom } from "../services/Atoms/currentUser";
 
 const Profile = () => {
   const [currentUser, setcurrentUser] = useAtom(currentUserAtom);
-
-
-console.log("kikoo", currentUser.id)
-
   const [properties, setData] = useState();
 
   useEffect(() => {
@@ -16,14 +12,39 @@ console.log("kikoo", currentUser.id)
       .then((res) => res.json())
       .then((properties) => {
         setData(properties);
-        // console.log(properties);
       })
       .catch((error) => console.error(error));
   }, []);
 
   return (
     <div>
-      {properties &&
+     <div className="details-container flex flex-row space-x-12">
+      <div className="basis-1/3">
+      <img
+        src="https://www.cactusnumerique.com/wp-content/uploads/elementor/thumbs/webaliser-_TPTXZd9mOo-unsplash-min-ovxvd1b3srjeno67z4zms7tarxzzih276y2vvdj8zw.jpg"
+        alt=""
+      />
+      </div>
+      <div className="details-text pl-4 pr-4">
+        <div className="flex items-center justify-between">
+          <h1>Title of property</h1>
+          <div className="flex gap-2 mt-3 mb-3">
+            <span className="badge">1000m²</span>
+            <span className="badge">30€/m²</span>
+          </div>
+        </div>
+        <div>
+          <span className="text-xl font-bold">580 000€</span>
+        </div>
+        <p className="mb-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+          voluptas necessitatibus recusandae sapiente expedita, sed voluptatibus
+          quod, corrupti explicabo aperiam voluptate ipsum. Dolorem, accusamus
+          eaque. Mollitia voluptate doloribus odit laboriosam.
+        </p>
+      </div>
+    </div>
+       {properties &&
         properties.map((property) => {
           if (currentUser.id === property.user.id)
             return (
