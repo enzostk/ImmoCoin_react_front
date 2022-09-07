@@ -5,7 +5,7 @@ const ForgotPassword = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = e.target.email.value
-        console.log(data)
+        // console.log(data)
     
 
     fetch("http://localhost:3000/users/password",{

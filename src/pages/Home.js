@@ -9,7 +9,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
+        // console.log(data);
         })
       .catch((error) => console.error(error));
   },[]);
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div>
       <Hero/>
-      <div className="card-container h-screen flex items-center justify-center gap-10 flex-wrap mt-4 mb-4">
+      <div className="card-container h-screen flex items-center justify-center gap-10 flex-wrap pt-4 pb-4">
 
       { data && data.map((property) => (
         <Article 
