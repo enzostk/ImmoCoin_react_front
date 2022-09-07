@@ -11,6 +11,8 @@ import Profile from "./pages/Profile";
 
 import Navbar from "./components/Navbar/Navbar";
 import Article from "./pages/Article";
+import New from "./pages/New";
+import Edit from "./pages/Edit";
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/article/:id" element={<Article />} />
+            <Route path="/properties/new" element={<New />} />
+            <Route path="/properties/edit" element={<Edit />} />
           </Routes>
         </main>
       </div>
