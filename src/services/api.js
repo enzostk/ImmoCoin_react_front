@@ -44,4 +44,13 @@ export default class APIManager {
     Cookies.remove("token");
     return response.data;
   }
+  static async resetPasswordUser(userToken, newPassword) {
+    const response = await API2.patch("/users/password", {
+      user: {
+        reset_password_token: userToken,
+        password: newPassword
+      },
+    });
+    return response.data;
+  }
 }
