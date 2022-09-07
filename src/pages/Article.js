@@ -17,9 +17,10 @@ const Article = () => {
   }, []);
 
   const showEmail = () => {
-    setButtonText("property@email.com");
+    setButtonText(data.user.email);
   };
 
+  if (data === undefined) return <h1>LOADING ...</h1>;
   return (
     <div className="details-container flex flex-row space-x-12">
       <img
@@ -28,17 +29,17 @@ const Article = () => {
       />
       <div className="details-text pl-4 pr-4">
         <div className="flex items-center justify-between">
-          <h1>Title of property</h1>
+          <h1>{data.title}</h1>
           <div className="flex gap-2 mt-3 mb-3">
-            <span className="badge">1000m²</span>
-            <span className="badge">30€/m²</span>
+            <span className="badge">{data.surface}m²</span>
+            <span className="badge">{Math.round(data.price/data.surface)}€/m²</span>
           </div>
         </div>
         <div>
-          <span className="text-xl font-bold">580 000€</span>
+          <span className="text-xl font-bold">{data.price}€</span>
         </div>
         <p className="mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+         {data.description}: <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
           voluptas necessitatibus recusandae sapiente expedita, sed voluptatibus
           quod, corrupti explicabo aperiam voluptate ipsum. Dolorem, accusamus
           eaque. Mollitia voluptate doloribus odit laboriosam.

@@ -4,8 +4,8 @@ const Hero = () => {
   return (
     <div className="bg-purple">
       <div className="px-32">
-        <div className="flex flex-row space-x-12">
-          <div className="basis-3/4 py-32">
+        <div className="flex flex-row flex-wrap-reverse space-x-12">
+          <div className="hero-text basis-3/4 py-32">
             <span className="text-5xl font-bold text-third">
               Bienvenue chez ImmoCoin
             </span>
