@@ -2,10 +2,8 @@ import React from 'react'
 import herologo from "../../assets/images/pngegg.png"
 const Hero = () => {
   return (
-    <div className="bg-purple">
-      <div className="px-32">
-        <div className="flex flex-row space-x-12">
-          <div className="basis-3/4 py-32">
+    <div className="hero-container bg-purple pl-2 pr-2 flex row flex-wrap-reverse justify-center">
+          <div className="text-container flex flex-col self-center pb-4">
             <span className="text-5xl font-bold text-third">
               Bienvenue chez ImmoCoin
             </span>
@@ -20,12 +18,10 @@ const Hero = () => {
               </span>
             </div>
           </div>
-          <div className='basis-1/4 px-0 py-0'>
-            <img src={herologo} alt="herologo" width="" height=""/>
+          <div className='img-container flex-none'>
+            <img src={herologo} alt="herologo"/>
           </div>
-        </div>
       </div>
-    </div>
   )
 }
 
