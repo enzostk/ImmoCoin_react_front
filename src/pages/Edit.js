@@ -26,13 +26,16 @@ const EditArticle = () => {
     fetch(`http://localhost:3000/properties/${id}`,
       {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
       })
         .then((res) => res.json())
         .then((property) => {
           console.log(property);
         })
         .catch((error) => console.error(error));
-        navigate("/")
   };
 
   const handleSubmit = (e) => {
@@ -191,6 +194,7 @@ const EditArticle = () => {
               </div>
               <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                 <button
+                  type="submit"
                   onClick={deleteArticle}
                   className="inline-flex justify-center rounded-md border border-transparent bg-red py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
@@ -205,6 +209,7 @@ const EditArticle = () => {
               </div>
             </div>
           </form>
+                
         </div>
       </div>
     </div>
