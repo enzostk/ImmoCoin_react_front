@@ -48,7 +48,6 @@ const Article = () => {
           <span className="text-xl font-bold">{property.price}€</span>
         </div>
         <p className="mb-5">{property.description}</p>
-
         <div className="flex row align-center gap-2">
           {logged ? (
             <>
