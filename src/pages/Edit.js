@@ -1,30 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { loggedAtom } from "../services/Atoms/user";
 import { useAtom } from "jotai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditArticle = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
   const token = useAtom(loggedAtom)[0];
+  const [property, setProperty] = useState("load");
   console.log(token);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/properties/" + id)
+      .then((res) => res.json())
+      .then((property) => {
+        setProperty(property);
+        console.log(property);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const title = e.target.title.value;
-    const price = e.target.price.value;
-    const surface = e.target.surface.value;
-    const description = e.target.description.value;
-    fetch("http://localhost:3000/properties", {
-      method: "POST",
+    const newTitle = e.target.newTitle.value;
+    const newPrice = e.target.newPrice.value;
+    const newSurface = e.target.newSurface.value;
+    const newDescription = e.target.newDescription.value;
+
+    fetch("http://localhost:3000/properties/" + id , {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         property: {
-          title: title,
-          description: description,
-          price: price,
-          surface: surface
+          title: newTitle,
+          description: newDescription,
+          price: newPrice,
+          surface: newSurface
         },
       }),
     })
@@ -64,9 +78,9 @@ const EditArticle = () => {
                     <div className="mt-1 flex rounded-md shadow-sm">
                       <input
                         type="text"
-                        id="title"
+                        id="newTitle"
                         className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                        placeholder="Vente villa 7 pièces"
+                        defaultValue={property.title}
                       />
                     </div>
                   </div>
@@ -79,9 +93,9 @@ const EditArticle = () => {
                     <div className="mt-1 flex rounded-md shadow-sm">
                       <input
                         type="text"
-                        id="price"
+                        id="newPrice"
                         className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                        placeholder="2 400 000 €"
+                        defaultValue={property.price}
                       />
                     </div>
                   </div>
@@ -92,9 +106,9 @@ const EditArticle = () => {
                     <div className="mt-1 flex rounded-md shadow-sm">
                       <input
                         type="text"
-                        id="surface"
+                        id="newSurface"
                         className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                        placeholder="250m2"
+                        defaultValue={property.surface}
                       />
                     </div>
                   </div>
@@ -110,10 +124,10 @@ const EditArticle = () => {
                   <div className="mt-1">
                     <textarea
                       type="text"
-                      id="description"
+                      id="newDescription"
                       rows={3}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      placeholder="..."
+                      defaultValue={property.description}
                     />
                   </div>
                 </div>
