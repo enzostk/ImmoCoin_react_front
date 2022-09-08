@@ -6,7 +6,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     const data = e.target.email.value
 
-    fetch("http://localhost:3000/users/password", {
+    fetch("https://immocoin-rails.herokuapp.com/users/password", {
       method: "POST",
       headers: { "Content-Type": 'application/json', "Accept": "application/json" },
       body: JSON.stringify({ "user": { email: data } })

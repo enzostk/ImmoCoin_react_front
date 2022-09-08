@@ -5,30 +5,30 @@ const Home = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
+    fetch("https://immocoin-rails.herokuapp.com/properties")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         // console.log(data);
-        })
+      })
       .catch((error) => console.error(error));
-  },[]);
+  }, []);
 
   return (
     <div>
-      <Hero/>
+      <Hero />
       <div className="card-container h-screen flex items-center justify-center gap-10 flex-wrap pt-4 pb-4">
 
-      { data && data.map((property) => (
-        <Article 
-        title={property.title}
-        price={property.price}
-        description={property.description}
-        // email={property.user.email}
-        surface={property.surface}
-        id={property.id}
-        key={property.id}
-        />
+        {data && data.map((property) => (
+          <Article
+            title={property.title}
+            price={property.price}
+            description={property.description}
+            // email={property.user.email}
+            surface={property.surface}
+            id={property.id}
+            key={property.id}
+          />
         ))}
 
       </div>
