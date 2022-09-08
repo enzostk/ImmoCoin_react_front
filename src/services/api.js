@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const apiUrl = "https://immocoin-rails.herokuapp.com";
+const apiUrl = "http://localhost:3000";
 const API = axios.create({ baseURL: apiUrl });
 const API2 = axios.create({ baseURL: apiUrl });
 
@@ -15,9 +15,9 @@ API.interceptors.request.use(({ headers, ...config }) => ({
 }));
 
 export default class APIManager {
-  static async registerUser(email, password) {
+  static async registerUser(email, password, status) {
     const response = await API.post("/users", {
-      user: { email: email, password: password },
+      user: { email: email, password: password, status: status },
     });
     const jwt = response.headers.authorization.slice(7);
     Cookies.set("token", jwt);

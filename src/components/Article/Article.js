@@ -33,7 +33,7 @@ const Article = (property) => {
 
         {/* Product action button */}
         <div className="mt-5 flex gap-2">
-            <Link to={"property/" + property.id}>
+            <Link to={"properties/" + property.id}>
               <button className="button-primary">Check details</button>
             </Link>
           </div>

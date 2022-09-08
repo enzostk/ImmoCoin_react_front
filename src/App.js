@@ -5,13 +5,11 @@ import Signup from "./components/Signup/Signup";
 
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
-
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-
 import Navbar from "./components/Navbar/Navbar";
 import Article from "./pages/Article";
-import New from "./pages/New";
+import NewArticle from "./pages/New";
 import Edit from "./pages/Edit";
 
 const App = () => {
@@ -28,8 +26,8 @@ const App = () => {
 
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/property/:id" element={<Article />} />
-            <Route path="/properties/new" element={<New />} />
+            <Route path="/properties/:id" element={<Article />} />
+            <Route path="/properties/new" element={<NewArticle />} />
             <Route path="/properties/edit/:id" element={<Edit />} />
           </Routes>
         </main>
