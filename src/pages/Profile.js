@@ -22,25 +22,32 @@ const Profile = () => {
   }, [currentUser.id]);
 
   if (userProperties === "")
-    return <h1>Vous n'avez pas encore ajouté de nouveaux biens.</h1>;
+    return (
+      <>
+        <h1>Vous n'avez pas encore ajouté de nouveaux biens.</h1>
+        <Link path="/properties/new" element={<NewArticle />}>
+          <button className="button-primary">Créer une annone</button>
+        </Link>
+      </>
+    );
   else
     return (
 
       <>
-       <Link path="/properties/new" element={<NewArticle />}> 
-         <button className="button-primary">Créer une annone</button>
-       </Link>
+        <Link path="/properties/new" element={<NewArticle />}>
+          <button className="button-primary">Créer une annone</button>
+        </Link>
         {userProperties &&
           userProperties.map((property) => (
             <SecondArticle
-            title={property.title}
-            price={property.price}
-            description={property.description}
-            surface={property.surface}
-            id={property.id}
+              title={property.title}
+              price={property.price}
+              description={property.description}
+              surface={property.surface}
+              id={property.id}
             />
-            ))}
-        </>
+          ))}
+      </>
     );
 };
 
