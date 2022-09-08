@@ -20,6 +20,24 @@ const EditArticle = () => {
       .catch((error) => console.error(error));
   }, [id]);
 
+  const deleteArticle = () => {
+    alert("Êtes-vous sûr de vouloir supprimer cette annonce ?");
+
+    fetch(`https://immocoin-rails.herokuapp.com/properties/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((property) => {
+          console.log(property);
+        })
+        .catch((error) => console.error(error));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTitle = e.target.newTitle.value;
@@ -38,7 +56,7 @@ const EditArticle = () => {
           title: newTitle,
           description: newDescription,
           price: newPrice,
-          surface: newSurface
+          surface: newSurface,
         },
       }),
     })
@@ -47,7 +65,7 @@ const EditArticle = () => {
       .catch((error) => {
         console.log(error.message);
       });
-      navigate("/")
+    navigate("/")
   };
 
   return (
@@ -177,13 +195,21 @@ const EditArticle = () => {
               <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  onClick={deleteArticle}
+                  className="inline-flex justify-center rounded-md border border-transparent bg-red py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Supprimer l'annonce
+                </button>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ml-2"
                 >
                   Sauvegarder
                 </button>
               </div>
             </div>
           </form>
+                
         </div>
       </div>
     </div>
