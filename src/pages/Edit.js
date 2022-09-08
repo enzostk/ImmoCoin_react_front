@@ -11,19 +11,19 @@ const EditArticle = () => {
   console.log(token);
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties/" + id)
+    fetch("https://immocoin-rails.herokuapp.com/properties/" + id)
       .then((res) => res.json())
       .then((property) => {
         setProperty(property);
         console.log(property);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [id]);
 
   const deleteArticle = () => {
     alert("Êtes-vous sûr de vouloir supprimer cette annonce ?");
 
-    fetch(`http://localhost:3000/properties/${id}`,
+    fetch(`https://immocoin-rails.herokuapp.com/properties/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -45,7 +45,7 @@ const EditArticle = () => {
     const newSurface = e.target.newSurface.value;
     const newDescription = e.target.newDescription.value;
 
-    fetch("http://localhost:3000/properties/" + id, {
+    fetch("https://immocoin-rails.herokuapp.com/properties/" + id , {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

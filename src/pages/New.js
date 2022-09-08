@@ -13,7 +13,7 @@ const NewArticle = () => {
     const price = e.target.price.value;
     const surface = e.target.surface.value;
     const description = e.target.description.value;
-    fetch("http://localhost:3000/properties", {
+    fetch("https://immocoin-rails.herokuapp.com/properties", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
