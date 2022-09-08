@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { loggedAtom } from "../services/Atoms/user";
 import { useAtom } from "jotai";
+import { currentUserAtom } from "../services/Atoms/currentUser";
 
 const Article = () => {
   const { id } = useParams();
   const [property, setProperty] = useState();
   const [logged] = useAtom(loggedAtom);
+  const [current_user] = useAtom(currentUserAtom);
+  const [buttonText, setButtonText] = useState('Afficher le mail');
 
   useEffect(() => {
     fetch("https://immocoin-rails.herokuapp.com/properties/" + id)
@@ -18,6 +21,10 @@ const Article = () => {
       })
       .catch((error) => console.error(error));
   }, [id, logged]);
+
+  const changeBtn = () => {
+    setButtonText(`${property.user.email}`);
+  }
 
   if (property === undefined) return <h1>LOADING ...</h1>;
   return (
@@ -41,14 +48,22 @@ const Article = () => {
           <span className="text-xl font-bold">{property.price}€</span>
         </div>
         <p className="mb-5">{property.description}</p>
-
-        {logged ? (
-          <>
-            <div className="mt-5 flex gap-2">{property.user.email}</div>
-          </>
-        ) : (
-          ""
-        )}
+        <div className="flex row align-center gap-2">
+          {logged ? (
+            <>
+              <button onClick={changeBtn} className="button-primary">{buttonText}</button>
+            </>
+          ) : (
+            ""
+          )}
+          {logged && property.user.id === current_user.id ? (
+            <Link to={"/properties/edit/" + property.id}>
+              <button className="button-primary">Modifier l'annonce</button>
+            </Link>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );
