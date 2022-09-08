@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { loggedAtom } from "../services/Atoms/user"
+import { loggedAtom } from "../services/Atoms/user";
 import { useAtom } from "jotai";
 
 const Article = () => {
   const { id } = useParams();
   const [property, setProperty] = useState();
-  const [logged,] = useAtom(loggedAtom);
+  const [logged] = useAtom(loggedAtom);
 
   useEffect(() => {
     fetch("https://immocoin-rails.herokuapp.com/properties/" + id)
@@ -17,7 +17,7 @@ const Article = () => {
         console.log(logged);
       })
       .catch((error) => console.error(error));
-  }, [id,logged]);
+  }, [id, logged]);
 
   if (property === undefined) return <h1>LOADING ...</h1>;
   return (
@@ -32,23 +32,23 @@ const Article = () => {
           <h1>{property.title}</h1>
           <div className="flex gap-2 mt-3 mb-3">
             <span className="badge">{property.surface}m²</span>
-            <span className="badge">{Math.round(property.price / property.surface)}€/m²</span>
+            <span className="badge">
+              {Math.round(property.price / property.surface)}€/m²
+            </span>
           </div>
         </div>
         <div>
           <span className="text-xl font-bold">{property.price}€</span>
         </div>
-        <p className="mb-5">
-          {property.description}
-        </p>
+        <p className="mb-5">{property.description}</p>
 
         {logged ? (
           <>
-            <div className="mt-5 flex gap-2">
-              {property.user.email}
-            </div>
+            <div className="mt-5 flex gap-2">{property.user.email}</div>
           </>
-        ) : ("")}
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
