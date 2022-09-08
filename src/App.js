@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar/Navbar";
 import Article from "./pages/Article";
-import NewArticle from "./pages/New";
+import NewArticle from "./pages/NewArticle";
 import Edit from "./pages/Edit";
 
 const App = () => {
