@@ -11,16 +11,14 @@ const Signup = () => {
   const [, setCurrentUser] = useAtom(currentUserAtom);
   const logged = useSetAtom(loggedAtom);
   const navigate = useNavigate();
-  const [status,setStatus]=useState();
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await APIManager.registerUser(email, password, status);
+    const response = await APIManager.registerUser(email, password);
     logged(true);
     setCurrentUser(response.user);
     navigate("/");
-    console.log("Vous etes enregistres en tant que" + status);
   };
 
   return (

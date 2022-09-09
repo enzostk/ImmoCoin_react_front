@@ -15,9 +15,9 @@ API.interceptors.request.use(({ headers, ...config }) => ({
 }));
 
 export default class APIManager {
-  static async registerUser(email, password, status) {
+  static async registerUser(email, password) {
     const response = await API.post("/users", {
-      user: { email: email, password: password, status: status },
+      user: { email: email, password: password },
     });
     const jwt = response.headers.authorization.slice(7);
     Cookies.set("token", jwt);
