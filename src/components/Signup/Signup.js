@@ -66,10 +66,10 @@ const Signup = () => {
               <option value="User">User</option>
               <option value="Seller">Seller</option>
             </select> */}
-            <label>User</label>
+            {/* <label>User</label>
             <input className="checkbox" type="checkbox" value="0" name="User"/>
             <label>Seller</label>
-            <input className="checkbox" type="checkbox" value="1" name="Seller"/>
+            <input className="checkbox" type="checkbox" value="1" name="Seller"/> */}
             <button className="bg-purple hover:bg-red
             text-white py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Je m'inscris</button>
           </form>
