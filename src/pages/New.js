@@ -3,7 +3,7 @@ import { loggedAtom } from "../services/Atoms/user";
 import { useAtom } from "jotai";
 import { useNavigate } from "react-router-dom";
 
-const NewArticle = () => {
+const New = () => {
   const navigate = useNavigate();
   const token = useAtom(loggedAtom)[0];
   console.log(token);
@@ -176,4 +176,4 @@ const NewArticle = () => {
   );
 };
 
-export default NewArticle;
+export default New;

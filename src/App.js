@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar/Navbar";
 import Article from "./pages/Article";
-import NewArticle from "./pages/New";
+import New from "./pages/New";
 import Edit from "./pages/Edit";
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/properties/:id" element={<Article />} />
-            <Route path="/properties/new" element={<NewArticle />} />
+            <Route path="/properties/new" element={<New />} />
             <Route path="/properties/edit/:id" element={<Edit />} />
           </Routes>
         </main>
