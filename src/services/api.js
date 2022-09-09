@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const apiUrl = "https://immocoin-react.herokuapp.com/";
+const apiUrl = "https://immocoin-rails.herokuapp.com/";
 const API = axios.create({ baseURL: apiUrl });
 const API2 = axios.create({ baseURL: apiUrl });
 
