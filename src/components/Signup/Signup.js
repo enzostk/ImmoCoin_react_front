@@ -11,28 +11,14 @@ const Signup = () => {
   const [, setCurrentUser] = useAtom(currentUserAtom);
   const logged = useSetAtom(loggedAtom);
   const navigate = useNavigate();
-  const [status,setStatus]=useState();
 
-  // const update = () => {
-  //   let select = document.getElementById('michel');
-  //   let value = select.options[select.selectedIndex].value;
-  //   console.log(value);
-  //   if (value==="User") { 
-  //     setStatus("1")
-  //    } else { 
-  //     setStatus("0")
-  //   }
-  //   console.log(status);
-  //   return status;
-  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await APIManager.registerUser(email, password, status);
+    const response = await APIManager.registerUser(email, password);
     logged(true);
     setCurrentUser(response.user);
     navigate("/");
-    console.log("Vous etes enregistres en tant que" + status);
   };
 
   return (
@@ -62,14 +48,6 @@ const Signup = () => {
               focus:outline-none border-b-4 border-purple focus:border-red transition duration-500
               px-3 pb-3"/>
             </div>
-            {/* <select id="michel" onChange={update}>
-              <option value="User">User</option>
-              <option value="Seller">Seller</option>
-            </select> */}
-            {/* <label>User</label>
-            <input className="checkbox" type="checkbox" value="0" name="User"/>
-            <label>Seller</label>
-            <input className="checkbox" type="checkbox" value="1" name="Seller"/> */}
             <button className="bg-purple hover:bg-red
             text-white py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Je m'inscris</button>
           </form>
