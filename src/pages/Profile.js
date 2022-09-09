@@ -3,7 +3,8 @@ import { useAtom } from "jotai";
 import { currentUserAtom } from "../services/Atoms/currentUser";
 import SecondArticle from "../components/Article/SecondArticle";
 import { Link } from "react-router-dom";
-import NewArticle from "./NewArticle";
+import NewArticle from "./New";
+
 const Profile = () => {
   const [currentUser,] = useAtom(currentUserAtom);
   const [, setData] = useState();
